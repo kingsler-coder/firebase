@@ -39,7 +39,7 @@ fun LoginScreen(navController:NavHostController) {
     var context= LocalContext.current
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Color.Blue),
+        .background(Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         Text(text = "Login here",

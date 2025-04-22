@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.kingsler.firebase.data.productviewmodel
 //import com.kingsler.login_registrationfirebase.data.productviewmodel
 //import com.kingsler.login_registrationfirebase.navigation.ROUTE_VIEW_PRODUCT
 import com.kingsler.firebase.navigation.ROUTE_VIEW_PRODUCT

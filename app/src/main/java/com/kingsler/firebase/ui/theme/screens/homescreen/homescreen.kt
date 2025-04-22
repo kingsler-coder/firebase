@@ -28,13 +28,13 @@ import com.kingsler.firebase.navigation.ROUTE_VIEW_UPLOAD
 fun HomeScreen(navController: NavHostController) {
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Color.Red),
+        .background(Color.Green),
         horizontalAlignment = Alignment.CenterHorizontally) {
         var context= LocalContext.current
 //        var productdata=productviewmodel(navController,context)
 
         Text(text = "Welcome to Home page",
-            color = Color.Cyan,
+            color = Color.Blue,
             fontFamily = FontFamily.Cursive,
             fontSize = 30.sp)
         Spacer(modifier = Modifier.height(100.dp))

@@ -23,7 +23,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import androidx.navigation.NavHostController
 
 
 @Composable
@@ -52,7 +52,7 @@ fun ViewProductsScreen(navController:NavHostController) {
             Spacer(modifier = Modifier.height(20.dp))
 
             LazyColumn(){
-                items(products){
+//                items(products){
 //                    ProductItem(
 //                        name = it.name,
 //                        quantity = it.quantity,
@@ -66,7 +66,7 @@ fun ViewProductsScreen(navController:NavHostController) {
         }
     }
 
-}
+//}
 
 //@Composable
 //fun ProductItem(name:String, quantity:String, price:String, id:String,
