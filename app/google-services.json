@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "361016983084",
+    "project_id": "firebas2-2b297",
+    "storage_bucket": "firebas2-2b297.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361016983084:android:d40b9c92cf8cc2370fdb89",
+        "android_client_info": {
+          "package_name": "com.kingsler.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnk8duOl-OnhSqVagu7HA9_kC6T00IIQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
