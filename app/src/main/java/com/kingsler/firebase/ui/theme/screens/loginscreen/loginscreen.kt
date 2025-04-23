@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
@@ -70,14 +71,14 @@ fun LoginScreen(navController:NavHostController) {
         Button(onClick = {
 //            val mylogin= AuthViewModel(navController, context )
 //            mylogin.login(email.text.trim(),pass.text.trim())
-        }, modifier = Modifier.fillMaxWidth()) {
+        }, modifier = Modifier.fillMaxWidth(),shape = CutCornerShape(10)) {
             Text(text = "Log In")
         }
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
             navController.navigate(ROUTE_REGISTER)
-        }, modifier = Modifier.fillMaxWidth()) {
+        }, modifier = Modifier.fillMaxWidth(),shape = CutCornerShape(10)) {
             Text(text = "Don't have account? Click to Register")
         }
 

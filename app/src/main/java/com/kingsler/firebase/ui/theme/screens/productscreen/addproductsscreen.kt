@@ -46,8 +46,8 @@ fun AddProductsScreen(navController: NavHostController) {
         Text(
             text = "Add product",
             fontSize = 30.sp,
-            fontFamily = FontFamily.Cursive,
-            color = Color.Red,
+            fontFamily = FontFamily.SansSerif,
+            color = Color.Green,
             modifier = Modifier.padding(20.dp),
             fontWeight = FontWeight.Bold,
             textDecoration = TextDecoration.Underline

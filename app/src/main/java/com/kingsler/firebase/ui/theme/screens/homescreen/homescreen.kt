@@ -1,12 +1,15 @@
 package com.kingsler.firebase.ui.theme.screens.homescreen
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,35 +31,42 @@ import com.kingsler.firebase.navigation.ROUTE_VIEW_UPLOAD
 fun HomeScreen(navController: NavHostController) {
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Color.Green),
+        .background(Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally) {
         var context= LocalContext.current
 //        var productdata=productviewmodel(navController,context)
 
         Text(text = "Welcome to Home page",
-            color = Color.Blue,
-            fontFamily = FontFamily.Cursive,
+            color = Color.Green,
+            fontFamily = FontFamily.SansSerif,
             fontSize = 30.sp)
         Spacer(modifier = Modifier.height(100.dp))
 
         Button(onClick = {
             navController.navigate(ROUTE_ADD_PRODUCT)
-        },modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Add Product")
+        },modifier = Modifier.fillMaxWidth(),shape = CutCornerShape(10),
+            colors = ButtonDefaults.buttonColors(Color.Green)
+            ) {
+            Text(text = "Add Product", fontSize = 20.sp)
+
         }
         Spacer(modifier = Modifier.height(100.dp))
 
         Button(onClick = {
             navController.navigate(ROUTE_VIEW_PRODUCT)
-        },modifier = Modifier.fillMaxWidth()) {
-            Text(text = "View Product")
+        },modifier = Modifier.fillMaxWidth(),shape = CutCornerShape(10),
+            colors = ButtonDefaults.buttonColors(Color.Green)
+            ) {
+            Text(text = "View Product", fontSize = 20.sp)
         }
         Spacer(modifier = Modifier.height(100.dp))
 
         Button(onClick = {
             navController.navigate(ROUTE_VIEW_UPLOAD)
-        },modifier = Modifier.fillMaxWidth()) {
-            Text(text = "View Products")
+        },modifier = Modifier.fillMaxWidth(),shape = CutCornerShape(10),
+            colors = ButtonDefaults.buttonColors(Color.Green)
+            ) {
+            Text(text = "View Products", fontSize = 20.sp)
         }
 
 

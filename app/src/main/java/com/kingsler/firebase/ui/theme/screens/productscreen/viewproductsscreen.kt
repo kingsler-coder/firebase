@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-//import androidx.compose.material.Button
-//import androidx.compose.material.Text
+import androidx.compose.material3.Button
+
 import androidx.compose.material3.Text
 
 import androidx.compose.runtime.Composable
@@ -24,6 +24,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.kingsler.firebase.data.productviewmodel
+import com.kingsler.firebase.model.Product
+import com.kingsler.firebase.navigation.ROUTE_UPDATE_PRODUCT
 
 
 @Composable
@@ -32,11 +36,11 @@ fun ViewProductsScreen(navController:NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         var context = LocalContext.current
-//        var productRepository = productviewmodel(navController, context)
-//        val emptyProductState = remember { mutableStateOf(Product("","","","")) }
-//        var emptyProductsListState = remember { mutableStateListOf<Product>() }
+       var productRepository = productviewmodel(navController, context)
+        val emptyProductState = remember { mutableStateOf(Product("","","","")) }
+        var emptyProductsListState = remember { mutableStateListOf<Product>() }
 
-//        var products = productRepository.viewProducts(emptyProductState, emptyProductsListState)
+        var products = productRepository.viewProducts(emptyProductState, emptyProductsListState)
 
 
         Column(
@@ -52,47 +56,47 @@ fun ViewProductsScreen(navController:NavHostController) {
             Spacer(modifier = Modifier.height(20.dp))
 
             LazyColumn(){
-//                items(products){
-//                    ProductItem(
-//                        name = it.name,
-//                        quantity = it.quantity,
-//                        price = it.price,
-//                        id = it.id,
-//                        navController = navController,
-//                        productRepository = productRepository
-//                    )
+                items(products){
+                    ProductItem(
+                        name = it.name,
+                        quantity = it.quantity,
+                        price = it.price,
+                        id = it.id,
+                        navController = navController,
+                        productRepository = productRepository
+                    )
                 }
             }
         }
     }
 
-//}
+}
 
-//@Composable
-//fun ProductItem(name:String, quantity:String, price:String, id:String,
-//                navController:NavHostController, productRepository:productviewmodel) {
-//
-//    Column(modifier = Modifier.fillMaxWidth()) {
-//        Text(text = name)
-//        Text(text = quantity)
-//        Text(text = price)
-//        Button(onClick = {
-//            productRepository.deleteProduct(id)
-//        }) {
-//            Text(text = "Delete")
-//        }
-//        Button(onClick = {
-//            navController.navigate(ROUTE_UPDATE_PRODUCT+"/$id")
-//        }) {
-//            Text(text = "Update")
-//        }
-//    }
-//
-//}
+@Composable
+fun ProductItem(name:String, quantity:String, price:String, id:String,
+                navController:NavHostController, productRepository: productviewmodel) {
+
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Text(text = name)
+        Text(text = quantity)
+        Text(text = price)
+        Button(onClick = {
+            productRepository.deleteProduct(id)
+        }) {
+            Text(text = "Delete")
+        }
+        Button(onClick = {
+            navController.navigate(ROUTE_UPDATE_PRODUCT+"/$id")
+        }) {
+           Text(text = "Update")
+        }
+    }
+
+}
 
 @Preview
 @Composable
 fun view() {
-//    ViewProductsScreen(rememberNavController())
+    ViewProductsScreen(rememberNavController())
 
 }
