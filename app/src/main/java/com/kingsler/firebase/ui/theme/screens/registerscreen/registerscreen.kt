@@ -31,12 +31,6 @@ import androidx.navigation.compose.rememberNavController
 import com.kingsler.firebase.data.AuthViewModel
 import com.kingsler.firebase.navigation.ROUTE_LOGIN
 
-//import androidx.navigation.NavHostController
-//import androidx.navigation.compose.rememberNavController
-//import com.erick.login_registrationfirebase.data.AuthViewModel
-//import com.erick.login_registrationfirebase.navigation.ROUTE_LOGIN
-
-
 @Composable
 fun RegisterScreen(navController:NavHostController) {
     var email by remember { mutableStateOf(TextFieldValue("")) }
@@ -90,10 +84,8 @@ fun RegisterScreen(navController:NavHostController) {
             val myregister= AuthViewModel(navController,context)
             myregister.signup(email.text.trim(),pass.text.trim(),confirmpass.text.trim())
 
-
-
-
-        }, modifier = Modifier.fillMaxWidth()) {
+        },
+            modifier = Modifier.fillMaxWidth()) {
             Text(text = "Register ")
         }
         Spacer(modifier = Modifier.height(20.dp))
